@@ -1,11 +1,11 @@
 {
-  "name": "@jagonzalr/awsprofile-cli",
+  "name": "awsswitch-cli",
   "version": "1.0.0",
-  "description": "Manage multiple AWS profiles",
+  "description": "Updates current default AWS profile saved in .aws config/credentials files.",
   "main": "src/cli.js",
   "bin": {
-    "@jagonzalr/awsprofile": "bin/awsprofile",
-    "awsprofile": "bin/awsprofile"
+    "@jagonzalr/awsswitch": "bin/awsswitch",
+    "awsswitch": "bin/awsswitch"
   },
   "publishConfig": {
     "access": "public"
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jagonzalr/awsprofile-cli.git"
+    "url": "git+https://github.com/jagonzalr/awsswitch-cli.git"
   },
   "keywords": [
     "cli",
@@ -26,9 +26,9 @@
   "author": "Jose Antonio Gonzalez",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jagonzalr/awsprofile-cli/issues"
+    "url": "https://github.com/jagonzalr/awsswitch-cli/issues"
   },
-  "homepage": "https://github.com/jagonzalr/awsprofile-cli#readme",
+  "homepage": "https://github.com/jagonzalr/awsswitch-cli#readme",
   "dependencies": {
     "chalk": "^4.1.2",
     "commander": "^8.3.0",
