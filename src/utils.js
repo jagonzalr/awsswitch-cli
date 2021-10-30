@@ -1,30 +1,42 @@
+import chalk from 'chalk'
 import fs from 'fs'
-import os from 'os'
-import path from 'path'
 
-const AWS_CONFIG_FILE = '.aws/config'
-const AWS_CREDENTIALS_FILE = '.aws/credentials'
+export function fileHasNewProfile(fileContent, newProfile, isConfig) {
+  return isConfig
+    ? fileContent.includes(`[profile ${newProfile}]`)
+    : fileContent.includes(`[${newProfile}]`)
+}
+
+export function logError(fileName, profile) {
+  console.error(
+    '%s No profile in %s found with name %s.',
+    chalk.red.bold('ERROR'),
+    chalk.yellowBright(fileName),
+    chalk.yellowBright(profile)
+  )
+}
+
+export function logSuccess(fileName) {
+  console.log(
+    '%s AWS default profile updated in %s successfully.',
+    chalk.green.bold('DONE'),
+    chalk.yellowBright(fileName)
+  )
+}
 
 export function updateFileWithNewProfile(
-  currentProfile,
+  file,
+  filePath,
   newProfile,
-  isConfig = true
+  currentProfile,
+  isConfig = false
 ) {
-  const homeDir = os.homedir()
-  const fileName = isConfig ? AWS_CONFIG_FILE : AWS_CREDENTIALS_FILE
-  const filePath = path.resolve(homeDir, fileName)
-  const file = fs.readFileSync(filePath, 'utf-8')
-
-  if (!fileHasNewProfile(file, newProfile, isConfig)) {
-    console.error(`No profile in ${fileName} found with name ${newProfile}`)
-    process.exit(1)
-  }
-
   const fileWithNoDefault = replaceFileDefaultProfile(
     file,
     currentProfile,
     isConfig
   )
+
   const fileWithDefault = replaceFileWithDefaultProfile(
     fileWithNoDefault,
     newProfile,
@@ -32,12 +44,6 @@ export function updateFileWithNewProfile(
   )
 
   fs.writeFileSync(filePath, fileWithDefault, 'utf-8')
-}
-
-export function fileHasNewProfile(fileContent, newProfile, isConfig) {
-  return isConfig
-    ? fileContent.includes(`[profile ${newProfile}]`)
-    : fileContent.includes(`[${newProfile}]`)
 }
 
 export function replaceFileDefaultProfile(

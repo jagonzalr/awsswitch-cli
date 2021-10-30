@@ -2,7 +2,7 @@
   "name": "@jagonzalr/awsprofile-cli",
   "version": "1.0.0",
   "description": "Manage multiple AWS profiles",
-  "main": "src/index.js",
+  "main": "src/cli.js",
   "bin": {
     "@jagonzalr/awsprofile": "bin/awsprofile",
     "awsprofile": "bin/awsprofile"
@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/jagonzalr/awsprofile-cli#readme",
   "dependencies": {
+    "chalk": "^4.1.2",
     "commander": "^8.3.0",
     "esm": "^3.2.25"
   },
