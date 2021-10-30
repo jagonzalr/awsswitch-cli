@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/awsswitch-cli.svg)](https://badge.fury.io/js/awsswitch-cli)
+
 # awsswitch-cli
 
 Update current default AWS profile saved in .aws config/credentials files.
