@@ -1,6 +1,8 @@
+[![npm version](https://badge.fury.io/js/awsswitch-cli.svg)](https://badge.fury.io/js/awsswitch-cli)
+
 # awsswitch-cli
 
-Updates current default AWS profile saved in .aws config/credentials files.
+Update current default AWS profile saved in .aws config/credentials files.
 
 ## Installation
 
@@ -44,9 +46,9 @@ Which will result:
 `.aws/config`
 
 ```
-[main]
+[profile main]
 region=us-east-1
-[profile default]
+[default]
 region=us-west-1
 [profile user2]
 region=eu-west-2
