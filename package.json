@@ -1,0 +1,42 @@
+{
+  "name": "@jagonzalr/awsprofile-cli",
+  "version": "1.0.0",
+  "description": "Manage multiple AWS profiles",
+  "main": "src/index.js",
+  "bin": {
+    "@jagonzalr/awsprofile": "bin/awsprofile",
+    "awsprofile": "bin/awsprofile"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jagonzalr/awsprofile-cli.git"
+  },
+  "keywords": [
+    "cli",
+    "aws",
+    "profile"
+  ],
+  "author": "Jose Antonio Gonzalez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jagonzalr/awsprofile-cli/issues"
+  },
+  "homepage": "https://github.com/jagonzalr/awsprofile-cli#readme",
+  "dependencies": {
+    "commander": "^8.3.0",
+    "esm": "^3.2.25"
+  },
+  "devDependencies": {
+    "lint-staged": "^11.2.6",
+    "prettier": "^2.4.1",
+    "pretty-quick": "^3.1.1",
+    "husky": "^7.0.0"
+  }
+}
